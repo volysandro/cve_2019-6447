@@ -1,3 +1,6 @@
+![](https://www.xda-developers.com/files/2019/01/es-explorer-skull-1900x700_c.png)
+(https://www.xda-developers.com/files/2019/01/es-explorer-skull-1900x700_c.png)
+
 ## Introduction
 As I was fiddling around on the HackTheBox machine "Explore" lately, I came across this vulnerability. It is not particularly complicated or interesting, merely a bug that was actually a feature. 
 
