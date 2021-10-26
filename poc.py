@@ -20,7 +20,7 @@ os.system('cls' if os.name == 'nt' else 'clear')
 if dev_name:
     print("Connected to " + dev_name + " successfully, type 'help' to show a list of available commands")
 
-cmds = ['listFiles','listPics','listVideos','listAudios','listApps','listAppsSystem','listAppsPhone','listAppsSdcard','listAppsAll','getFile','getDeviceInfo']
+cmds = ['listFiles','listPics','listVideos','listAudios','listApps','listAppsSystem','listAppsPhone','listAppsSdcard','listAppsAll','getDeviceInfo']
 
 while dev_name:
     cmd = input("[ " + target_ip + " -> " + dev_name + " ] # ")
@@ -40,5 +40,10 @@ while dev_name:
     if cmd in cmds:
         req = requests.post(url, data = json.dumps({'command': cmd}), headers = {"Content-Type": "application/json"})
         print(req.text)
-    elif cmd not in cmds and cmd != "help":
+    elif "getFile" in cmd:
+        path = input("Enter file path: ")
+        req = requests.get(url + path)
+        with open('out.dat', 'wb') as out:
+            out.write(req.content)
+    elif cmd not in cmds and cmd != "help" and cmd != "getFile":
         print("Please enter a valid command")
