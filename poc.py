@@ -21,7 +21,6 @@ if dev_name:
     print("Connected to " + dev_name + " successfully, type 'help' to show a list of available commands")
 
 cmds = ['listFiles','listPics','listVideos','listAudios','listApps','listAppsSystem','listAppsPhone','listAppsSdcard','listAppsAll','getDeviceInfo']
-
 while dev_name:
     cmd = input("[ " + target_ip + " -> " + dev_name + " ] # ")
     if cmd == "help":
